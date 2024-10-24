@@ -8,6 +8,7 @@ FILES=		main.cpp \
 			Ice.cpp \
 			Ice.cpp \
 			ICharacter.cpp \
+			Character.cpp \
 			IMateriaSource.cpp
 OBJ_FOLDER=	obj/
 OBJ=		$(FILES:%.cpp=$(OBJ_FOLDER)%.o)
