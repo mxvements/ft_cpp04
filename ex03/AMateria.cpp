@@ -6,31 +6,32 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 21:08:07 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/24 19:33:04 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/10/26 18:53:07 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+#include "Colors.hpp"
 
 AMateria::~AMateria(void)
 {
-	std::cout << "AMateria constructor called" << std::endl;
+	std::cout << GREEN << "AMateria destructor called" << RESET << std::endl;
 }
 
 AMateria::AMateria(void)
 {
-	std::cout << "AMateria destructor called" << std::endl;
+	std::cout << GREEN << "AMateria constructor called" << RESET << std::endl;
 }
 
 AMateria::AMateria(const AMateria &src)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << GREEN << "Copy constructor called" << RESET << std::endl;
 	*this = src;
 }
 
 AMateria &AMateria::operator=(const AMateria &src)
 {
-	std::cout << "AMateria assign overload called" << std::endl;
+	std::cout << GREEN << "AMateria assign overload called" << RESET << std::endl;
 	this->_type = src._type;
 	return (*this);
 }

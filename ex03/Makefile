@@ -1,15 +1,14 @@
 NAME=	amateria
 CC=		clang++
-FLAGS=	-Wall -Wextra -Werror -g3
+FLAGS=	-Wall -Wextra -Werror -g3 -std=c++98
 
 FILES=		main.cpp \
 			AMateria.cpp \
 			Cure.cpp \
 			Ice.cpp \
 			Ice.cpp \
-			ICharacter.cpp \
 			Character.cpp \
-			IMateriaSource.cpp
+			MateriaSource.cpp
 OBJ_FOLDER=	obj/
 OBJ=		$(FILES:%.cpp=$(OBJ_FOLDER)%.o)
 
