@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucia <lucia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 19:21:50 by lucia             #+#    #+#             */
-/*   Updated: 2024/10/20 19:22:09 by lucia            ###   ########.fr       */
+/*   Updated: 2024/11/15 17:24:24 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class WrongAnimal
 		std::string _type;
 
 	public:
-		~WrongAnimal(void);
+		virtual ~WrongAnimal(void);
 		WrongAnimal(void);
 		WrongAnimal(std::string type);
 		WrongAnimal(const WrongAnimal &src);

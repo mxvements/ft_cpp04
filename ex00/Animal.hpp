@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucia <lucia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 19:21:34 by lucia             #+#    #+#             */
-/*   Updated: 2024/10/20 19:22:13 by lucia            ###   ########.fr       */
+/*   Updated: 2024/11/15 17:24:09 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Animal
 		std::string _type;
 
 	public:
-		~Animal(void);
+		virtual ~Animal(void);
 		Animal(void);
 		Animal(std::string type);
 		Animal(const Animal &src);
