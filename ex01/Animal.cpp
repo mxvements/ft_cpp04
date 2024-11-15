@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucia <lucia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 15:22:57 by lucia             #+#    #+#             */
-/*   Updated: 2024/10/20 23:15:07 by lucia            ###   ########.fr       */
+/*   Updated: 2024/11/15 18:19:37 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,28 @@
 Animal::~Animal(void)
 {
 	delete this->_brain;
-	std::cout << this->getClassName() << ": Destructor called" << std::endl;
+	std::cout << YELLOW << this->getClassName() << ": Destructor called" << RESET << std::endl;
 }
 
 Animal::Animal(void)
 {
-	std::cout << this->getClassName() << ": Constructor called" << std::endl;
+	std::cout << YELLOW << this->getClassName() << ": Constructor called" << RESET << std::endl;
 }
 
 Animal::Animal(std::string type): _type(type), _brain(new Brain())
 {
-	std::cout << this->getClassName() << ": Constructor called" << std::endl;
+	std::cout << YELLOW << this->getClassName() << ": Constructor called" << RESET << std::endl;
 }
 
 Animal::Animal(const Animal &src)
 {
-	std::cout << this->getClassName() << ": Copy constructor called" << std::endl;
+	std::cout << YELLOW << this->getClassName() << ": Copy constructor called" << RESET << std::endl;
 	*this = src;
 }
 
 Animal &Animal::operator=(const Animal &src)
 {
-	std::cout << this->getClassName() << ": Assignment overload called" << std::endl;
+	std::cout << YELLOW << this->getClassName() << ": Assignment overload called" << RESET << std::endl;
 	this->_type = src._type;
 	this->_brain = new Brain(*src._brain);
 	return (*this);

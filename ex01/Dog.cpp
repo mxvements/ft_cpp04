@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 15:23:11 by lucia             #+#    #+#             */
-/*   Updated: 2024/11/15 17:52:25 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/15 18:20:47 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,24 @@
 
 Dog::~Dog(void)
 {
-	std::cout << this->getClassName() << ": Destructor called" << std::endl;
+	std::cout << LBLUE << this->getClassName() << ": Destructor called" << RESET << std::endl;
 }
 
-Dog::Dog(void): Animal("Dog")
+Dog::Dog(void): Animal(Dog::getClassName())
 {
-	std::cout << this->getClassName() << ": Constructor called" << std::endl;
+	std::cout << LBLUE << this->getClassName() << ": Constructor called" << RESET << std::endl;
+	this->_type = Dog::getClassName();
 }
 
-Dog::Dog(const Dog &src): Animal()
+Dog::Dog(const Dog &src): Animal(Dog::getClassName())
 {
-	std::cout << this->getClassName() << ": Copy constructor called" << std::endl;
+	std::cout << LBLUE << this->getClassName() << ": Copy constructor called" << RESET << std::endl;
 	*this = src;
 }
 
 Dog &Dog::operator=(const Dog &src)
 {
-	std::cout << this->getClassName() << ": Assigner overload called" << std::endl;
+	std::cout << LBLUE << this->getClassName() << ": Assigner overload called" << RESET << std::endl;
 	this->_type = src._type;
 	return (*this);
 }

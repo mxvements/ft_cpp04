@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 16:17:53 by lucia             #+#    #+#             */
-/*   Updated: 2024/11/15 17:52:40 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/15 18:20:16 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 Cat::~Cat(void)
 {
-	std::cout << this->getClassName() << ": Destructor called" << std::endl;
+	std::cout << LGREEN << this->getClassName() << ": Destructor called" << RESET << std::endl;
 }
 
-Cat::Cat(void): Animal("Cat")
+Cat::Cat(void): Animal(Cat::getClassName())
 {
-	std::cout << this->getClassName() << ": Constructor called" << std::endl;
-	this->_type = "Cat";
+	std::cout << LGREEN << this->getClassName() << ": Constructor called" << RESET << std::endl;
+	this->_type = Cat::getClassName();
 }
 
-Cat::Cat(const Cat &src): Animal()
+Cat::Cat(const Cat &src): Animal(Cat::getClassName())
 {
-	std::cout << this->getClassName() << ": Copy constructor called" << std::endl;
+	std::cout << LGREEN << this->getClassName() << ": Copy constructor called" << RESET << std::endl;
 	*this = src;
 }
 
 Cat &Cat::operator=(const Cat &src)
 {
-	std::cout << this->getClassName() << ": Assignment overload called" << std::endl;
+	std::cout << LGREEN << this->getClassName() << ": Assignment overload called" << RESET << std::endl;
 	this->_type = src._type;
 	return (*this);
 }
