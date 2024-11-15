@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 15:23:11 by lucia             #+#    #+#             */
-/*   Updated: 2024/11/15 17:53:33 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/15 19:11:04 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ Dog::~Dog(void)
 Dog::Dog(void): Animal("Dog")
 {
 	std::cout << this->getClassName() << ": Constructor called" << std::endl;
+	this->_type = "Dog";
 }
 
-Dog::Dog(const Dog &src): Animal()
+Dog::Dog(const Dog &src): Animal("Dog")
 {
 	std::cout << this->getClassName() << ": Copy constructor called" << std::endl;
 	*this = src;
