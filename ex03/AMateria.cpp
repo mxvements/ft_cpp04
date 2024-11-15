@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 21:08:07 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/26 18:53:07 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/15 20:46:45 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ AMateria::~AMateria(void)
 }
 
 AMateria::AMateria(void)
+{
+	std::cout << GREEN << "AMateria constructor called" << RESET << std::endl;
+}
+
+AMateria::AMateria(std::string const & type): _type(type)
 {
 	std::cout << GREEN << "AMateria constructor called" << RESET << std::endl;
 }

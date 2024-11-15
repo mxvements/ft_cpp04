@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 19:25:50 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/23 19:28:38 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/15 20:49:03 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define ICE_HPP
 
 #include "AMateria.hpp"
+#include "Character.hpp"
 
 class Ice: public AMateria
 {
@@ -28,6 +29,7 @@ class Ice: public AMateria
 		Ice &operator=(const Ice &src);
 
 		AMateria *clone() const;
+		// void use(ICharacter &target);
 } ;
 
 #endif

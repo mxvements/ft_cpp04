@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 21:08:05 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/26 18:52:54 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/15 20:40:23 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@ class AMateria
 		std::string _type;
 
 	private:
+		AMateria(void);
 
 	public:
 		virtual ~AMateria(void);
-		AMateria(void);
+		AMateria(std::string const & type);
 		AMateria(const AMateria &src);
 		AMateria &operator=(const AMateria &src);
 

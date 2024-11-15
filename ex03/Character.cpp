@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:52:31 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/26 19:07:05 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/15 22:21:00 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 
 Character::~Character(void)
 {
-	for (int i = 0; i < 4; i++)
-	{
-		delete (this->_inventory[i]);
-	}
+	// for (int i = 0; i < 4; i++)
+	// {
+	// 	if (this->_inventory[i])
+	// 		delete (this->_inventory[i]);
+	// }
 	std::cout << YLLW << "Character destructor called" << RESET << std::endl;
 }
 
@@ -54,7 +55,7 @@ Character &Character::operator=(const Character &src)
 {
 	std::cout << YLLW << "Character assignment overload called" << RESET << std::endl;
 	this->_name = src._name;
-	this->setInventory(src._inventory);
+	this->setInventory(src._inventory); //BUUUUUG
 	// for (int i = 0; src._inventory[i]; i++)
 	// {
 	// 	if (this->_inventory[i])
@@ -115,6 +116,11 @@ void Character::equip(AMateria *m)
  */
 void Character::unequip(int idx)
 {
+	if (!this->_inventory[idx])
+	{
+		std::cout << "Amateria at idx " << idx << " is null, cannot unequip"  << std::endl;
+		return ;
+	}
 	for (int i = idx; (i + 1) < 4; i++)
 	{
 		this->_inventory[i] = this->_inventory[i + 1];
@@ -127,5 +133,10 @@ void Character::unequip(int idx)
 void Character::use(int idx, ICharacter &target)
 {
 	AMateria *m = this->_inventory[idx];
+	if (!m)
+	{
+		std::cout << "Amateria at idx " << idx << " is null, cannot use" << std::endl;
+		return ;
+	}
 	m->use(target);
 }
