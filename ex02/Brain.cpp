@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucia <lucia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 20:23:37 by lucia             #+#    #+#             */
-/*   Updated: 2024/10/20 21:42:47 by lucia            ###   ########.fr       */
+/*   Updated: 2024/11/15 19:04:52 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 Brain::~Brain(void)
 {
-	std::cout << this->getClassName() << ": Destructor called" << std::endl;
+	std::cout << ORANGE << this->getClassName() << ": Destructor called" << RESET << std::endl;
 }
 
 Brain::Brain(void)
 {
-	std::cout << this->getClassName() << ": Constructor called" << std::endl;
+	std::cout << ORANGE << this->getClassName() << ": Constructor called" << RESET << std::endl;
 	for (int i = 0; i < 100; i++)
 		this->_ideas[i] = "All animals are beautiful";
 }
 
 Brain::Brain(const Brain &src)
 {
-	std::cout << this->getClassName() << ": Constructor called" << std::endl;
+	std::cout << ORANGE << this->getClassName() << ": Constructor called" << RESET << std::endl;
 	*this = src;
 }
 
 Brain &Brain::operator=(const Brain &src)
 {
-	std::cout << this->getClassName() << ": Copy constructor called" << std::endl;
+	std::cout << ORANGE << this->getClassName() << ": Copy constructor called" << RESET << std::endl;
 	if (this == &src)
 		return (*this);
 	for (int i = 0; i < (int)src._ideas->length(); i++)
