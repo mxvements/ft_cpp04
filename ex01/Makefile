@@ -1,5 +1,5 @@
 NAME=	animal
-CC=		clang++
+CC=		g++
 FLAGS=	-Wall -Wextra -Werror -g3 -std=c++98
 
 FILES=		main.cpp \

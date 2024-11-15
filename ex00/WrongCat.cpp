@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucia <lucia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 16:48:54 by lucia             #+#    #+#             */
-/*   Updated: 2024/10/20 19:41:05 by lucia            ###   ########.fr       */
+/*   Updated: 2024/11/15 17:54:45 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ WrongCat::~WrongCat(void)
 WrongCat::WrongCat(void): WrongAnimal("Cat")
 {
 	std::cout << this->getClassName() << ": Constructor called" << std::endl;
-	this->_type = "Cat";
+	this->_type = "WrongCat";
 }
 
-WrongCat::WrongCat(const WrongCat &src)
+WrongCat::WrongCat(const WrongCat &src): WrongAnimal()
 {
 	std::cout << this->getClassName() << ": Copy constructor called" << std::endl;
 	*this = src;
