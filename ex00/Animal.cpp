@@ -6,12 +6,18 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 15:22:57 by lucia             #+#    #+#             */
-/*   Updated: 2024/11/15 17:28:38 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/16 19:19:05 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
+/**
+ * Destructor must be virtual in a polymorphic class because
+ * - it wont compile (big reason)
+ * - if the derived (parent) class is supposed to handle cleanup or specific operations
+ * skipping it can lead to unexpected behaviour
+ */
 Animal::~Animal(void)
 {
 	std::cout << this->getClassName() << ": Destructor called" << std::endl;

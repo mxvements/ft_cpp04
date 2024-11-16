@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 19:21:50 by lucia             #+#    #+#             */
-/*   Updated: 2024/11/15 17:24:24 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/16 19:24:45 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class WrongAnimal
 		virtual ~WrongAnimal(void);
 		WrongAnimal(void);
 		WrongAnimal(std::string type);
+		
 		WrongAnimal(const WrongAnimal &src);
 		WrongAnimal &operator=(const WrongAnimal &src);
 
@@ -35,7 +36,7 @@ class WrongAnimal
 		std::string getType(void) const;
 
 		virtual std::string getClassName(void) const;
-		virtual void makeSound(void) const;
+		void makeSound(void) const;
 } ;
 
 #endif

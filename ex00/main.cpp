@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 15:23:00 by lucia             #+#    #+#             */
-/*   Updated: 2024/11/15 17:58:36 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/16 19:26:49 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,22 @@ int main(void)
 	const Animal *first_dog = new Dog();
 	const Animal *first_cat = new Cat();
 	
-	std::cout << meta->getType() << std::endl;
-	std::cout << first_dog->getType() << std::endl;
-	std::cout << first_cat->getType() << std::endl;
-	std::cout << std::endl;
+	// std::cout << meta->getType() << std::endl;
+	// std::cout << first_dog->getType() << std::endl;
+	// std::cout << first_cat->getType() << std::endl;
+	// std::cout << std::endl;
 	meta->makeSound();
 	first_dog->makeSound();
 	first_cat->makeSound();
 	std::cout << std::endl;
 
-	const WrongAnimal *wronganimal = new WrongAnimal();
+	const WrongAnimal *wronganimal = new WrongCat();
 	const WrongAnimal wronganimal_cp(*wronganimal);
-	const WrongCat *wrongcat = new WrongCat();
-	std::cout << wronganimal->getType() << std::endl;
-	std::cout << wronganimal_cp.getType() << std::endl;
-	std::cout << wrongcat->getType() << std::endl;
+	const WrongAnimal *wrongcat = new WrongCat();
+	// std::cout << wronganimal->getType() << std::endl;
+	// std::cout << wronganimal_cp.getType() << std::endl;
+	// std::cout << wrongcat->getType() << std::endl;
 	wronganimal->makeSound();
-	wronganimal_cp.makeSound();
 	wrongcat->makeSound();
 	std::cout << std::endl;
 
