@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 15:23:00 by lucia             #+#    #+#             */
-/*   Updated: 2024/11/15 18:57:18 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/16 20:08:32 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,42 +24,26 @@ int main(void)
 		animals[i] = new Dog();
 		animals[i + size] = new Cat();
 	}
-
-	std::cout << std::endl;
-
-	std::cout << "Check random ideas of random animals" << std::endl;
-	const Animal *random_animal = animals[2];
-	std::cout << "animal type: " << random_animal->getType() << std::endl
-			  << "animal's type from animal class: " << random_animal->Animal::getType() << std::endl
-			  << "\tanimal's brain: " << random_animal->getBrain() << std::endl
-			  << "\tanimal's random idea: " << random_animal->getBrain()->getIdeas()[23] << std::endl;
-	std::cout << std::endl;
-	/**
-	 * shallow copy
-	 * just copies the addresss, so both pointers point to the same object
-	 *
-	 * deep copy
-	 * involves creating a new object that is a copy of the original object's content
-	 */
-	std::cout << "Testing copies of animals are not shallow" << std::endl;
-	Animal *animal_src = animals[7];
-	Animal *animal_cp = new Animal(*animal_src);
-	std::cout << "src animal ptr:\t" << animal_src << std::endl;
-	std::cout << "cp animal ptr:\t" << animal_cp << std::endl;
-	std::cout << std::endl;
-	std::cout << "src animal brain ptr:\t" << animal_src->getBrain() << std::endl;
-	std::cout << "cp animal brain ptr:\t" << animal_cp->getBrain() << std::endl;
-	std::cout << std::endl;
-	std::cout << "animal type: " << animal_cp->getType() << std::endl
-			  << "\tanimal's brain: " << animal_cp->getBrain() << std::endl
-			  << "\tanimal's random idea: " << animal_cp->getBrain()->getIdeas()[62] << std::endl
-			  << std::endl;
-
-	std::cout << std::endl;
-
-	delete animal_cp;
-	for (int i = 0; i < (size * 2); i++)
+	for (int i = 0; i < (size * 2); i++) 
 		delete animals[i];
+
+	/** Check deep copyin of Brain */
+	Brain *b1 = new Brain();
+	std::string ideas[100];
+	for (int i = 0; i < 100; i++){
+		ideas[i] = "all animals are beautiful";
+	}
+	b1->setIdeas(ideas);
+	for (int i = 0; i < 100; i++){
+		ideas[i] = "all animals are awesome";
+	}
+	Brain *b2 = new Brain();
+	b2->setIdeas(ideas);
+	std::cout << "checking deep copy of brain:" << std::endl;
+	std::cout << "b1 address:\t" << b1 << "\trandom idea:\t" << b1->getIdeas()[0] << std::endl;
+	std::cout << "b2 address:\t" << b2 << "\trandom idea:\t" << b2->getIdeas()[0] << std::endl;
+	delete b1;
+	delete b2;
 
 	return (0);
 }

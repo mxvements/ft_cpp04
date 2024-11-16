@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 19:21:34 by lucia             #+#    #+#             */
-/*   Updated: 2024/11/15 18:08:22 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/16 19:27:54 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class Animal
 
 	protected:
 		std::string _type;
-		Brain *_brain;
 
 	public:
 		virtual ~Animal(void);
@@ -35,9 +34,7 @@ class Animal
 		Animal &operator=(const Animal &src);
 
 		void setType(std::string type);
-		void setBrain(Brain *brain);
 		std::string getType(void) const;
-		Brain *getBrain(void) const;
 
 		virtual std::string getClassName(void) const;
 		virtual void makeSound(void) const;

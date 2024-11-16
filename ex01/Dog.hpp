@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucia <lucia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 15:22:54 by lucia             #+#    #+#             */
-/*   Updated: 2024/10/20 19:42:14 by lucia            ###   ########.fr       */
+/*   Updated: 2024/11/16 19:54:15 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class Dog: public Animal
 {
 	private:
+		Brain *_brain;
 
 	protected:
 
@@ -27,6 +28,8 @@ class Dog: public Animal
 		Dog(const Dog &src);
 		Dog &operator=(const Dog &src);
 		
+		Brain *getBrain(void) const;
+
 		std::string getClassName(void) const;
 		void makeSound() const;
 		
