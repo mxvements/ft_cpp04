@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 19:09:15 by luciama2          #+#    #+#             */
-/*   Updated: 2024/11/16 12:50:37 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/16 20:17:57 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,7 @@
 #define MATERIASOURCE_HPP
 
 #include "Colors.hpp"
-#include "AMateria.hpp"
-
-class IMateriaSource
-{
-	public:
-	virtual ~IMateriaSource() {}
-	virtual void learnMateria(AMateria* m) = 0;
-	virtual AMateria* createMateria(std::string const & type) = 0;
-};
+#include "IMateriaSource.hpp"
 
 class MateriaSource: public IMateriaSource
 {
@@ -39,6 +31,5 @@ class MateriaSource: public IMateriaSource
 		void learnMateria(AMateria *m);
 		AMateria* createMateria(std::string const & type);
 } ;
-
 
 #endif

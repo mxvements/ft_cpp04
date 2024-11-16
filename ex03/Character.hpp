@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:34:35 by luciama2          #+#    #+#             */
-/*   Updated: 2024/11/15 21:56:41 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/16 20:16:46 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,7 @@
 #include <iomanip>
 
 #include "AMateria.hpp"
-
-class AMateria;
-
-class ICharacter
-{
-	public:
-		virtual ~ICharacter() {}
-		virtual std::string const &getName() const = 0;
-		virtual void equip(AMateria *m) = 0;
-		virtual void unequip(int idx) = 0;
-		virtual void use(int idx, ICharacter &target) = 0;
-} ;
+#include "ICharacter.hpp"
 
 class Character: public ICharacter
 {
